@@ -105,8 +105,8 @@ public class MinMoves {
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt() + 200;
         int n = sc.nextInt() + 200;
-        // dfs(200, 200, m, n, 0);
-        // System.out.println(moves);
-        System.out.print(bfs(200, 200, m, n));
+        dfs(200, 200, m, n, 0);
+        System.out.println(moves);
+        // System.out.print(bfs(200, 200, m, n));
     }
 }

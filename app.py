@@ -9,7 +9,7 @@ def index():
     problem_dir = 'problems'
     for filename in os.listdir(problem_dir):
         if filename.endswith('.java'):
-            with open(os.path.join(problem_dir, filename), 'r') as file:
+            with open(os.path.join(problem_dir, filename), 'r',encoding='utf-8') as file:
                 lines = file.readlines()
                 tags = [line.strip().replace('//tags: ', '').replace(' ',' - ') for line in lines if line.startswith('//tags:')]
                 problems[filename] = tags
@@ -18,6 +18,5 @@ def index():
 @app.route('/problems/<path:filename>')
 def download_file(filename):
     return send_from_directory('problems', filename)
-
 if __name__ == '__main__':
     app.run(debug=True)
